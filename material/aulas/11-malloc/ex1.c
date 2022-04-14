@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 12
+#define N 14
 
 int *aloca_vetor(int n) {
     int *vetor = malloc(n * sizeof(int));
@@ -9,7 +9,7 @@ int *aloca_vetor(int n) {
 }
 
 void atribui(int *vetor, int n) {
-    for (int i = 0; i <= n; i++) { // problema!
+    for (int i = 0; i <= n-1; i++) { // problema!
         vetor[i] = i;
     }
 }
@@ -20,10 +20,10 @@ int main(int argc, char *argv[]) {
 
     atribui(vetor, N);
 
-    for (i = 0; i <= N; i++) { // problema!
+    for (i = 0; i <= N-1; i++) { // problema!
         printf("Elemento %d: %d\n", i+1, vetor[i]);
     }
 
-
+	free(vetor);
     return 0;
 }

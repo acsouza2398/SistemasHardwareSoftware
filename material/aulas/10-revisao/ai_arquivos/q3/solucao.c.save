@@ -1,0 +1,17 @@
+// Questao 03
+// Implemente aqui uma funcao chamada ex3_solucao
+void ex3_solucao(long *d, long *i, long *s){
+	long *c;
+	c = d;
+	d = *i;
+	long a = *s;
+	*i = a;
+	*s = d;
+	a = *i;
+	a = a+a*4;
+	d = d+d*2;
+	a = a+d;
+	*c = a;
+}
+
+`gcc -Og -g -fno-stack-protector solucao.c q3.o -lsystemd -lm -o q3`
